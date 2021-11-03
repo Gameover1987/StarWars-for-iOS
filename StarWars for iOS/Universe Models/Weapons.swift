@@ -23,7 +23,7 @@ enum WeaponsError: Error {
 protocol Weapons {
     var name: String { get }
     var damage: Int { get }
-//    var distance: Int { get }
+    var distance: Int { get }
     var ammunition: Int { get set }
     mutating func fire() throws
 }

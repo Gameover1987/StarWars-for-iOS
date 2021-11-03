@@ -66,7 +66,11 @@ extension Space: ShootHandler {
             print("Не попал ха-ха")
             return
         }
-        spaceObject.health -= weapons.damage
+        
+        let distanceModifier = weapons.distance / 100
+        
+        spaceObject.health -= weapons.damage * distanceModifier
+        
         if spaceObject.health <= 0 {
             remove(with: spaceObject.coordinate)
         }

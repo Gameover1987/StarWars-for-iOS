@@ -32,6 +32,6 @@ extension Rect {
     static func generate() -> Rect {
         let x = Int.random(in: 0...10)
         let y = Int.random(in: 0...10)
-        return Rect(x: x, y: y, width: 2, height: 2)
+        return Rect(x: x, y: y, width: 4, height: 4)
     }
 }
