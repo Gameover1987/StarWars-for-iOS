@@ -54,6 +54,10 @@ class Space {
         if let index = objects.firstIndex(where: { $0.coordinate == coordinate } ) {
             self.objects.remove(at: index)
         }
+        
+        if self.objects.count == 2 {
+            print("Gameover man!")
+        }
     }
 }
 
@@ -69,7 +73,9 @@ extension Space: ShootHandler {
         
         let distanceModifier = weapons.distance / 100
         
+        let oldHelath = spaceObject.health
         spaceObject.health -= weapons.damage * distanceModifier
+        print("Old health was: \(oldHelath), new health is: \(spaceObject.health))")
         
         if spaceObject.health <= 0 {
             remove(with: spaceObject.coordinate)

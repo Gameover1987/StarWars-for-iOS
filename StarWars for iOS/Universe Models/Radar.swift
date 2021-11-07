@@ -91,10 +91,16 @@ class Radar: SpaceObject, Togglable {
         print("Сканирую пространство \(rect)")
         if let objects = datasource?.expose(for: rect), !objects.isEmpty {
             print("Ага! Попался \(objects)")
-            if let starship = objects.first as? StarshipImp,
-            starship.fraction == .empare {
-                observer?.detected(object: starship)
+            let starship = objects.first as? StarshipImp
+            if starship == nil {
+                return
             }
+            
+            observer?.detected(object: starship!)
+            
+            //starship.fraction == .empare {
+                //observer?.detected(object: starship)
+            //}
         }
     }
 }

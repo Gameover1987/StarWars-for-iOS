@@ -9,11 +9,11 @@
 import Foundation
 
 struct Bomb: Weapons {
-    var name: String = "Lazer Blaster"
+    var name: String = "Atom bomb"
     var damage: Int = 100
     var distance: Int = 10
     var rateOfFire: Int = 2
-    var ammunition: Int = 2
+    var ammunition: Int = 10
 }
 
 struct LazerBlaster: Weapons {
